@@ -1,0 +1,16 @@
+
+    $ cbmc --bounds-check --pointer-check --show-properties --memory-leak-check t/doublefree.c
+    CBMC version 5.6 64-bit x86_64 linux
+    Parsing t/doublefree.c
+
+    $ cbmc --bounds-check --pointer-check --show-properties --memory-leak-check t/doublefree.c
+    CBMC version 5.6 64-bit x86_64 linux
+    Parsing t/doublefree.c
+
+    $ splint t/doublefree.c
+    t/doublefree.c: (in function doublefree)
+    t/doublefree.c:10:8: Dead storage x passed as out parameter to free: x
+      Memory is used after it has been released (either by passing as an only param
+      or assigning to an only global). (Use -usereleased to inhibit warning)
+       t/doublefree.c:6:8: Storage x released
+    

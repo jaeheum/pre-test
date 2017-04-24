@@ -1,0 +1,11 @@
+-Wall
+-pedantic
+-std=iso9899:1999
+-Wtraditional
+-Wshadow
+-Wpointer-arith
+-Wcast-qual
+-Wcast-align
+-Wstrict-prototypes
+-Wmissing-prototypes
+-Wconversion 

@@ -1,0 +1,4 @@
+-fdiagnostics-color=always
+-fstack-check
+-Wextra
+-I .

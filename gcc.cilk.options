@@ -1,0 +1,6 @@
+-fdiagnostics-color=always
+-fcilkplus
+-DFCILKPLUS
+-fstack-check
+-Wextra
+-I .
