@@ -1,0 +1,125 @@
+
+$ frama-c -c11 -val -val-builtins-auto t/h/doublefree.c
+[kernel] Parsing FRAMAC_SHARE/libc/__fc_builtin_for_normalization.i (no preprocessing)
+[kernel] Parsing t/h/doublefree.c (with preprocessing)
+t/h/doublefree.c:50:[kernel] warning: Calling undeclared function aligned_alloc. Old style K&R code?
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  __fc_random_counter ∈ {0}
+  __fc_rand_max ∈ {32767}
+  __fc_heap_status ∈ [--..--]
+  __fc_time ∈ [--..--]
+  __fc_time_tm ∈ {0}
+  __p_fc_time_tm ∈ {{ &__fc_time_tm }}
+  optarg ∈ {{ NULL ; &S_optarg[0] }}
+  optind ∈ [--..--]
+  opterr ∈ [--..--]
+  optopt ∈ [--..--]
+  __fc_fds[0..1023] ∈ {0}
+  S_optarg[0..1] ∈ [--..--]
+[value] computing for function troublefree_roundtrip <- main.
+        Called from t/h/doublefree.c:68.
+t/h/doublefree.c:5:[value] allocating variable __malloc_troublefree_roundtrip_l5
+[value] Recording results for troublefree_roundtrip
+[value] Done for function troublefree_roundtrip
+[value] computing for function troublefree_ok <- main.
+        Called from t/h/doublefree.c:69.
+t/h/doublefree.c:9:[value] allocating variable __malloc_troublefree_ok_l9
+[value] Recording results for troublefree_ok
+[value] Done for function troublefree_ok
+[value] computing for function troublefree_if <- main.
+        Called from t/h/doublefree.c:70.
+t/h/doublefree.c:14:[value] allocating variable __malloc_troublefree_if_l14
+[value] Recording results for troublefree_if
+[value] Done for function troublefree_if
+[value] computing for function troublefree_explicit_null_check <- main.
+        Called from t/h/doublefree.c:71.
+t/h/doublefree.c:21:[value] allocating variable __malloc_troublefree_explicit_null_check_l21
+[value] Recording results for troublefree_explicit_null_check
+[value] Done for function troublefree_explicit_null_check
+[value] computing for function doublefree <- main.
+        Called from t/h/doublefree.c:72.
+t/h/doublefree.c:28:[value] allocating variable __malloc_doublefree_l28
+t/h/doublefree.c:30:[value] warning: accessing left-value that contains escaping addresses.
+                 assert ¬\dangling(&x);
+[value] Recording results for doublefree
+[value] Done for function doublefree
+[value] computing for function doublefree_if <- main.
+        Called from t/h/doublefree.c:73.
+t/h/doublefree.c:34:[value] allocating variable __malloc_doublefree_if_l34
+[value] Recording results for doublefree_if
+[value] Done for function doublefree_if
+[value] computing for function doublefree_explicit_null_check <- main.
+        Called from t/h/doublefree.c:74.
+t/h/doublefree.c:42:[value] allocating variable __malloc_doublefree_explicit_null_check_l42
+t/h/doublefree.c:45:[value] warning: accessing left-value that contains escaping addresses.
+                 assert ¬\dangling(&x);
+[value] Recording results for doublefree_explicit_null_check
+[value] Done for function doublefree_explicit_null_check
+[value] computing for function aa_c11 <- main.
+        Called from t/h/doublefree.c:75.
+[value] computing for function sysconf <- aa_c11 <- main.
+        Called from t/h/doublefree.c:50.
+t/h/doublefree.c:50:[kernel] warning: Neither code nor specification for function sysconf, generating default assigns from the prototype
+[value] using specification for function sysconf
+[value] Done for function sysconf
+[value] computing for function aligned_alloc <- aa_c11 <- main.
+        Called from t/h/doublefree.c:50.
+t/h/doublefree.c:50:[kernel] warning: Neither code nor specification for function aligned_alloc, generating default assigns from the prototype
+[value] using specification for function aligned_alloc
+[value] Done for function aligned_alloc
+[value] Recording results for aa_c11
+[value] Done for function aa_c11
+[value] computing for function aa_c11_explicit_null_check <- main.
+        Called from t/h/doublefree.c:76.
+[value] computing for function sysconf <- aa_c11_explicit_null_check <- main.
+        Called from t/h/doublefree.c:58.
+[value] Done for function sysconf
+[value] computing for function aligned_alloc <- aa_c11_explicit_null_check <- main.
+        Called from t/h/doublefree.c:58.
+[value] Done for function aligned_alloc
+t/h/doublefree.c:60:[value] warning: Wrong free: assert(pass a freeable address)
+[value] Recording results for aa_c11_explicit_null_check
+[value] Done for function aa_c11_explicit_null_check
+[value] computing for function shorter <- main.
+        Called from t/h/doublefree.c:77.
+t/h/doublefree.c:65:[value] allocating variable __malloc_shorter_l65
+[value] Recording results for shorter
+[value] Done for function shorter
+[value] Recording results for main
+[value] done for function main
+t/h/doublefree.c:45:[value] assertion 'Value,dangling_pointer' got final status invalid.
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function doublefree:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {{ NULL ; &__malloc_doublefree_l28[0] }} or ESCAPINGADDR
+[value:final-states] Values at end of function doublefree_explicit_null_check:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {0}
+[value:final-states] Values at end of function doublefree_if:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {{ NULL ; &__malloc_doublefree_if_l34[0] }}
+[value:final-states] Values at end of function shorter:
+  __fc_heap_status ∈ [--..--]
+[value:final-states] Values at end of function aa_c11:
+  __fc_heap_status ∈ [--..--]
+  x ∈ [--..--]
+[value:final-states] Values at end of function aa_c11_explicit_null_check:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {0}
+[value:final-states] Values at end of function troublefree_explicit_null_check:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {0} or ESCAPINGADDR
+[value:final-states] Values at end of function troublefree_if:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {{ NULL ; &__malloc_troublefree_if_l14[0] }}
+[value:final-states] Values at end of function troublefree_ok:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {{ NULL ; &__malloc_troublefree_ok_l9[0] }} or ESCAPINGADDR
+[value:final-states] Values at end of function troublefree_roundtrip:
+  __fc_heap_status ∈ [--..--]
+[value:final-states] Values at end of function main:
+  __fc_heap_status ∈ [--..--]
+  __retres ∈ {0}

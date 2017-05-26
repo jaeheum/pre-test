@@ -1,0 +1,414 @@
+
+$ cbmc --c11 --show-claims t/h/doublefree.c
+CBMC version 5.7 64-bit x86_64 linux
+Parsing t/h/doublefree.c
+Converting
+Type-checking doublefree
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Partial Inlining
+Generic Property Instrumentation
+Property free.assertion.1:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.2:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.3:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.4:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.5:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.6:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.7:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.8:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.9:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.10:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.11:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.12:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.13:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.14:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.15:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.16:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.17:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.18:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.19:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.20:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.21:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.22:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.23:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.24:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.25:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.26:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.27:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.28:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.29:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.30:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.31:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.32:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.33:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.34:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.35:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.36:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.37:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.38:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.39:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.40:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.41:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.42:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.43:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.44:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.45:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.46:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.47:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.48:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.49:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.50:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.51:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.52:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.53:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.54:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.55:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.56:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+Property free.assertion.57:
+  file <builtin-library-free> line 11 function free
+  free argument is dynamic object
+  DYNAMIC_OBJECT(ptr)
+
+Property free.assertion.58:
+  file <builtin-library-free> line 13 function free
+  free argument has offset zero
+  POINTER_OFFSET(ptr) == 0
+
+Property free.assertion.59:
+  file <builtin-library-free> line 18 function free
+  double free
+  0 != 0
+
+Property free.assertion.60:
+  file <builtin-library-free> line 22 function free
+  free called for new[] object
+  __CPROVER_malloc_object != ptr || !__CPROVER_malloc_is_new_array
+
+
+$ cbmc --c11 t/h/doublefree.c
+CBMC version 5.7 64-bit x86_64 linux
+Parsing t/h/doublefree.c
+Converting
+Type-checking doublefree
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Partial Inlining
+Generic Property Instrumentation
+Starting Bounded Model Checking
+**** WARNING: no body for function sysconf
+**** WARNING: no body for function aligned_alloc
+size of program expression: 553 steps
+simple slicing removed 17 assignments
+Generated 47 VCC(s), 19 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+5372 variables, 6237 clauses
+SAT checker: instance is SATISFIABLE
+Solving with MiniSAT 2.2.1 with simplifier
+5372 variables, 3538 clauses
+SAT checker: instance is SATISFIABLE
+Solving with MiniSAT 2.2.1 with simplifier
+5372 variables, 3164 clauses
+SAT checker: instance is SATISFIABLE
+Solving with MiniSAT 2.2.1 with simplifier
+5372 variables, 3164 clauses
+SAT checker: instance is SATISFIABLE
+Solving with MiniSAT 2.2.1 with simplifier
+5372 variables, 3164 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.042s
+
+** Results:
+[] free called for new[] object: SUCCESS
+[free.assertion.1] free argument is dynamic object: SUCCESS
+[free.assertion.2] free argument has offset zero: SUCCESS
+[free.assertion.3] double free: SUCCESS
+[free.assertion.4] free called for new[] object: SUCCESS
+[free.assertion.5] free argument is dynamic object: SUCCESS
+[free.assertion.6] free argument has offset zero: SUCCESS
+[free.assertion.7] double free: SUCCESS
+[free.assertion.8] free called for new[] object: SUCCESS
+[free.assertion.9] free argument is dynamic object: SUCCESS
+[free.assertion.10] free argument has offset zero: SUCCESS
+[free.assertion.11] double free: SUCCESS
+[free.assertion.12] free called for new[] object: SUCCESS
+[free.assertion.13] free argument is dynamic object: SUCCESS
+[free.assertion.14] free argument has offset zero: SUCCESS
+[free.assertion.15] double free: SUCCESS
+[free.assertion.16] free called for new[] object: SUCCESS
+[free.assertion.17] free argument is dynamic object: SUCCESS
+[free.assertion.18] free argument has offset zero: SUCCESS
+[free.assertion.19] double free: SUCCESS
+[free.assertion.20] free called for new[] object: SUCCESS
+[free.assertion.21] free argument is dynamic object: SUCCESS
+[free.assertion.22] free argument has offset zero: SUCCESS
+[free.assertion.23] double free: FAILURE
+[free.assertion.24] free called for new[] object: SUCCESS
+[free.assertion.25] free argument is dynamic object: SUCCESS
+[free.assertion.26] free argument has offset zero: SUCCESS
+[free.assertion.27] double free: SUCCESS
+[free.assertion.28] free called for new[] object: SUCCESS
+[free.assertion.29] free argument is dynamic object: SUCCESS
+[free.assertion.30] free argument has offset zero: SUCCESS
+[free.assertion.31] double free: SUCCESS
+[free.assertion.32] free called for new[] object: SUCCESS
+[free.assertion.33] free argument is dynamic object: SUCCESS
+[free.assertion.34] free argument has offset zero: SUCCESS
+[free.assertion.35] double free: SUCCESS
+[free.assertion.36] free called for new[] object: SUCCESS
+[free.assertion.37] free argument is dynamic object: SUCCESS
+[free.assertion.38] free argument has offset zero: SUCCESS
+[free.assertion.39] double free: FAILURE
+[free.assertion.40] free called for new[] object: SUCCESS
+[free.assertion.41] free argument is dynamic object: SUCCESS
+[free.assertion.42] free argument has offset zero: SUCCESS
+[free.assertion.43] double free: SUCCESS
+[free.assertion.44] free called for new[] object: SUCCESS
+[free.assertion.45] free argument is dynamic object: SUCCESS
+[free.assertion.46] free argument has offset zero: SUCCESS
+[free.assertion.47] double free: SUCCESS
+[free.assertion.48] free called for new[] object: SUCCESS
+[free.assertion.49] free argument is dynamic object: FAILURE
+[free.assertion.50] free argument has offset zero: FAILURE
+[free.assertion.51] double free: FAILURE
+[free.assertion.52] free called for new[] object: SUCCESS
+[free.assertion.53] free argument is dynamic object: FAILURE
+[free.assertion.54] free argument has offset zero: FAILURE
+[free.assertion.55] double free: FAILURE
+[free.assertion.56] free called for new[] object: SUCCESS
+[free.assertion.57] free argument is dynamic object: SUCCESS
+[free.assertion.58] free argument has offset zero: SUCCESS
+[free.assertion.59] double free: SUCCESS
+[free.assertion.60] free called for new[] object: SUCCESS
+
+** 8 of 61 failed (5 iterations)
+VERIFICATION FAILED

@@ -1,0 +1,81 @@
+
+$ num t/h/doublefree.c
+ 1  #include<stdlib.h>
+ 2  #include<unistd.h>
+ 3  
+ 4  void troublefree_roundtrip(size_t n){
+ 5    free(malloc(n));
+ 6    return;
+ 7  }
+ 8  void troublefree_ok(size_t n){
+ 9    unsigned char*x=(unsigned char*)malloc(n);
+10    free(x);
+11    return;
+12  }
+13  void troublefree_if(size_t n){
+14    unsigned char*x=(unsigned char*)malloc(n);
+15    if(!x){
+16      free(x);
+17    }
+18    return;
+19  }
+20  void troublefree_explicit_null_check(size_t n){
+21    unsigned char*x=(unsigned char*)malloc(n);
+22    if(x!=NULL){
+23      free(x);
+24    }
+25    return;
+26  }
+27  void doublefree(size_t n){
+28    unsigned char*x=(unsigned char*)malloc(n);
+29    free(x);
+30    free(x);
+31    return;
+32  }
+33  void doublefree_if(size_t n){
+34    unsigned char*x=(unsigned char*)malloc(n);
+35    if(!x){
+36      free(x);
+37      free(x);
+38    }
+39    return;
+40  }
+41  void doublefree_explicit_null_check(size_t n){
+42    unsigned char*x=(unsigned char*)malloc(n);
+43    if(x!=NULL){
+44      free(x);
+45      free(x);
+46    }
+47    return;
+48  }
+49  void aa_c11(size_t n){
+50    void*x=aligned_alloc((size_t)sysconf(_SC_PAGESIZE),n);
+51    if(!x){
+52      free(x);
+53      free(x);
+54    }
+55    return;
+56  }
+57  void aa_c11_explicit_null_check(size_t n){
+58    void*x=aligned_alloc((size_t)sysconf(_SC_PAGESIZE),n);
+59    if(x!=NULL){
+60      free(x);
+61      free(x);
+62    }
+63    return;
+64  }
+65  void shorter(size_t n){free(malloc(n));}
+66  
+67  int main(void){
+68    troublefree_roundtrip(0);
+69    troublefree_ok(0);
+70    troublefree_if(0);
+71    troublefree_explicit_null_check(0);
+72    doublefree(0);
+73    doublefree_if(0);
+74    doublefree_explicit_null_check(0);
+75    aa_c11(0);
+76    aa_c11_explicit_null_check(0);
+77    shorter(0);
+78    return 0;
+79  }

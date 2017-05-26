@@ -1,0 +1,39 @@
+
+$ splint -exportlocal -commentchar . -unrecog -warnposix t/h/doublefree.c
+Splint 3.1.2 --- 03 May 2009
+
+t/h/doublefree.c: (in function troublefree_if)
+t/h/doublefree.c:17:3: Variable x is released in true branch, but live in
+                          continuation.
+  The state of a variable is different depending on which branch is taken. This
+  means no annotation can sensibly be applied to the storage. (Use -branchstate
+  to inhibit warning)
+   t/h/doublefree.c:17:3: in true branch:
+   t/h/doublefree.c:16:10: Storage x released
+   t/h/doublefree.c:17:3: in continuation:
+   t/h/doublefree.c:14:45: Storage x allocated
+t/h/doublefree.c: (in function doublefree)
+t/h/doublefree.c:30:8: Dead storage x passed as out parameter to free: x
+  Memory is used after it has been released (either by passing as an only param
+  or assigning to an only global). (Use -usereleased to inhibit warning)
+   t/h/doublefree.c:29:8: Storage x released
+t/h/doublefree.c: (in function doublefree_if)
+t/h/doublefree.c:37:10: Dead storage x passed as out parameter to free: x
+   t/h/doublefree.c:36:10: Storage x released
+t/h/doublefree.c:38:3: Variable x is released in true branch, but live in
+                          continuation.
+   t/h/doublefree.c:38:3: in true branch:
+   t/h/doublefree.c:37:10: Storage x released
+   t/h/doublefree.c:38:3: in continuation:
+   t/h/doublefree.c:34:45: Storage x allocated
+t/h/doublefree.c: (in function doublefree_explicit_null_check)
+t/h/doublefree.c:45:10: Dead storage x passed as out parameter to free: x
+   t/h/doublefree.c:44:10: Storage x released
+t/h/doublefree.c: (in function aa_c11)
+t/h/doublefree.c:53:10: Dead storage x passed as out parameter to free: x
+   t/h/doublefree.c:52:10: Storage x released
+t/h/doublefree.c: (in function aa_c11_explicit_null_check)
+t/h/doublefree.c:61:10: Dead storage x passed as out parameter to free: x
+   t/h/doublefree.c:60:10: Storage x released
+
+Finished checking --- 7 code warnings
